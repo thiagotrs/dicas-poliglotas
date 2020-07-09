@@ -1,0 +1,40 @@
+{% extends "./base.njk" %}
+
+{% block header %}
+	<section
+		class="jumbotron"
+		style="background-image: url('/img/{{ bannerUrl }}');"
+	>
+		<div class="jumbotron__layer">
+			<div class="container jumbotron__wrap">
+				<h2 class="jumbotron__title">{{ title | safe }}</h2>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block content %}
+	<section class="section">
+		<div class="container section__wrap md:text-center">
+			<h2 class="title">
+				{{ title | safe }}
+			</h2>
+			<div class="card-group">
+			{% for language in collections.language %}
+				<div class="card border">
+					<a href="{{ language.url | url }}">
+						<img
+							src="/img/{{ language.data.bannerUrl }}"
+							alt="idioma"
+							class="card__image"
+						/>
+						<div class="card__title">
+							{{ language.data.title | safe }}
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

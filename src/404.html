@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Página não encontrada
+lead: Essa página não existe.
+action: Ir para Home
+permalink: 404.html
+---
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <section class="section md:h-header-screen">
+        <div class="container call-to-action">
+            <img
+                src="img/landing_2.svg"
+                alt=""
+                class="call-to-action__illustration lg:left-0"
+            />
+            <div class="call-to-action__content lg:ml-auto">
+                <h2 class="title">
+                    {{ title | safe }}
+                </h2>
+                <p class="lead md:hidden xl:block">
+                    {{ lead | safe }}
+                </p>
+                <a href="/" class="btn inline-block">{{ action | safe }}</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

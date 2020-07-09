@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ meta.title }}</title>
+		<meta name="description" content="{{ meta.description }}">
+
+		<meta property="og:site_name" content="{{ meta.title }}">
+		<meta property="og:title" content="{{ meta.title }}">
+		<meta property="og:description" content="{{ meta.description }}">
+		<meta property="og:locale" content="{{ meta.locale }}">
+
+		<link rel="icon" href="/img/icon.jpg" type="image/jpg" />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<header class="header">
+			{% include "nav.njk" %}
+			{% block header %}
+				{{ header | safe }}
+			{% endblock %}
+		</header>
+		{% block content %}
+			{{ content | safe }}
+		{% endblock content %}
+		{% include "footer.njk" %}
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<footer class="footer">
+    <div class="container footer__wrap">
+        <p class="footer__copy">
+            {{ meta.title }} |
+            <a
+                href="{{ meta.author_link | url }}"
+                target="_blank"
+                class="link"
+                >{{ meta.author }}</a
+            >
+        </p>
+        <a
+            href="{{ meta.project_link | url }}"
+            target="_blank"
+            class="github"
+            ><img src="/img/github-brands.svg" class="github__image" alt="github" /></a>
+    </div>
+</footer>

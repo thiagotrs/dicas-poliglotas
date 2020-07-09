@@ -1,0 +1,364 @@
+@tailwind base;
+
+@tailwind components;
+
+body {
+	font-family: "Raleway", sans-serif;
+}
+
+.nav {
+}
+
+.nav__wrap {
+	@apply mx-3 flex flex-col;
+}
+
+.nav__title {
+	@apply text-center text-3xl font-medium text-primary py-3;
+}
+
+.nav__list {
+	@apply flex flex-col;
+}
+
+.nav__item {
+	@apply border-b;
+}
+
+.nav__link {
+	@apply text-xl block p-2;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+	@apply bg-primary text-white;
+}
+
+.nav__link--active {
+	@apply text-primary;
+}
+
+.header {
+	@apply overflow-hidden;
+}
+
+.aside {
+	@apply py-12 bg-primary hidden overflow-hidden;
+}
+
+.aside__wrap {
+	@apply mx-3 flex flex-col;
+}
+
+.main {
+	@apply py-12 overflow-hidden;
+}
+
+.main__wrap {
+	@apply mx-3;
+}
+
+.section {
+	@apply py-12 overflow-hidden;
+}
+
+.section__wrap {
+	@apply mx-3;
+}
+
+.call-to-action {
+	@apply mx-3 flex flex-col-reverse h-full;
+}
+
+.footer {
+	@apply bg-secondary overflow-hidden;
+}
+
+.footer__copy {
+	@apply text-xl font-bold;
+}
+
+.footer__wrap {
+	@apply mx-3 flex items-center h-24;
+}
+
+.title {
+	@apply text-4xl font-bold;
+}
+
+.lead {
+	@apply text-xl my-2;
+}
+
+.btn {
+	@apply rounded-lg p-4 text-xl bg-primary text-white border-2 border-transparent font-medium;
+}
+
+.btn:hover {
+	@apply bg-transparent text-primary border-primary;
+}
+
+.pagination {
+	@apply flex my-3 overflow-hidden justify-center;
+}
+
+.pagination__btn {
+	@apply block p-3 text-lg bg-primary text-white border-2 border-transparent;
+}
+
+.pagination__btn:hover {
+	@apply bg-transparent text-primary border-primary;
+}
+
+.pagination__btn--disabled {
+	@apply opacity-50 cursor-not-allowed;
+}
+
+.link {
+	@apply text-primary;
+}
+
+.link:hover {
+	@apply underline;
+}
+
+.github {
+	@apply ml-auto;
+}
+.github__image {
+	@apply h-12;
+}
+.github__image:hover {
+	filter: invert(21%) sepia(83%) saturate(2986%) hue-rotate(253deg)
+		brightness(83%) contrast(92%);
+}
+
+.card {
+	@apply bg-white rounded-lg flex-1 mb-3;
+}
+
+.card__image {
+	@apply w-full h-32 object-cover;
+}
+
+.card__title {
+	@apply bg-white m-4 text-xl font-medium text-primary;
+}
+
+.card__em {
+	@apply block font-bold text-2xl;
+}
+
+.card-group {
+	@apply grid grid-cols-1 gap-4 mt-4 mb-6;
+}
+
+.card__link {
+	@apply grid grid-cols-3 overflow-hidden;
+}
+
+.card__link > .card__title {
+	@apply row-span-1 col-start-1 col-end-3;
+}
+
+.card__link > .card__image {
+	@apply w-full h-full col-start-3 col-end-4 row-start-1 row-end-3 object-cover;
+}
+
+.card__link > .card__date {
+	@apply bg-white p-4 pt-0 text-lg font-normal row-span-1 col-start-1 col-end-3 truncate;
+}
+
+.jumbotron {
+	@apply bg-cover bg-center bg-cover overflow-hidden;
+}
+
+.jumbotron__layer {
+	background-color: rgba(102, 54, 204, 0.4);
+}
+
+.jumbotron__title {
+	@apply text-5xl text-white;
+}
+
+.jumbotron__wrap {
+	@apply mx-3 h-64 flex justify-center items-center;
+}
+
+.form {
+	@apply bg-secondary border p-4 rounded-lg my-3;
+}
+
+.label {
+	@apply text-xl font-bold block;
+}
+
+.input {
+	@apply border block rounded-lg w-full p-2 mb-2;
+}
+
+.textarea {
+	@apply border block rounded-lg w-full h-48 mb-2;
+}
+
+.container {
+	width: auto;
+}
+
+.article {
+}
+
+.article > h2 {
+	@apply text-3xl my-3 font-medium;
+}
+
+.article > p {
+	@apply text-xl font-normal my-3;
+}
+
+.article > ul {
+	@apply mb-3 overflow-hidden;
+}
+
+.article > ul > li {
+	@apply bg-white rounded-lg mb-3 overflow-hidden border grid grid-cols-3;
+}
+
+.article > ul > li > a {
+	@apply bg-white p-4 text-xl font-medium text-primary row-span-1 col-start-1 col-end-3;
+}
+
+.article > ul > li > em {
+	@apply bg-white p-4 pt-0 text-lg font-normal row-span-1 col-start-1 col-end-3 truncate;
+}
+
+.article > ul > li > img {
+	@apply w-full h-full col-start-3 col-end-4 row-start-1 row-end-3 object-cover;
+}
+
+@screen sm {
+	.nav__wrap {
+		@apply mx-auto;
+	}
+
+	.call-to-action {
+		@apply mx-auto;
+	}
+
+	.aside__wrap {
+		@apply mx-auto;
+	}
+
+	.main__wrap {
+		@apply mx-auto;
+		width: calc(20rem + 20 * ((100vw - 20rem) / 60));
+	}
+
+	.section__wrap {
+		@apply mx-auto;
+	}
+
+	.jumbotron__wrap {
+		@apply mx-auto;
+	}
+
+	.footer__wrap {
+		@apply mx-auto;
+	}
+}
+
+@screen md {
+	.nav__wrap {
+		@apply flex-row h-24 items-center;
+	}
+
+	.nav__title {
+		@apply text-4xl py-0;
+	}
+
+	.nav__list {
+		@apply flex-row ml-auto;
+	}
+
+	.nav__item {
+		@apply border-0;
+	}
+
+	.nav__link {
+		@apply p-0;
+	}
+
+	.nav__link:hover,
+	.nav__link:focus {
+		@apply bg-transparent text-primary;
+		outline: 2px solid #6636cc;
+		outline-offset: 5px;
+	}
+
+	.call-to-action {
+		@apply flex-row items-center;
+	}
+
+	.aside {
+		@apply block;
+	}
+
+	.aside__wrap {
+		@apply flex-row;
+	}
+
+	.title {
+		@apply text-5xl;
+	}
+
+	.lead {
+		@apply text-2xl;
+	}
+
+	.call-to-action__illustration {
+		@apply w-1/2;
+	}
+
+	.call-to-action__content {
+		@apply w-1/2;
+	}
+
+	.card {
+		@apply mb-0;
+	}
+
+	.card__image {
+		@apply h-56;
+	}
+
+	.card-group {
+		@apply grid-cols-2;
+	}
+
+	.form {
+		@apply mb-0;
+	}
+}
+
+@screen lg {
+	.call-to-action__illustration {
+		@apply absolute;
+	}
+
+	.card-group {
+		@apply grid-cols-3;
+	}
+	.card-group--2c {
+		@apply grid-cols-2;
+	}
+
+	.call-to-action__content {
+		@apply w-1/3;
+	}
+
+	.jumbotron__wrap {
+		height: 30rem;
+	}
+}
+
+@tailwind utilities;

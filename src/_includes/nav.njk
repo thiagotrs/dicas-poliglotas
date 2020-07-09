@@ -1,0 +1,15 @@
+<nav class="nav">
+    <div class="container nav__wrap">
+        <h1 class="nav__title">
+            <a href="/">{{meta.title}}</a>
+        </h1>
+        {% set navPages = collections.all | eleventyNavigation %}
+        <ul class="nav__list md:space-x-8">
+        {%- for entry in navPages %}
+        <li class="nav__item">
+            <a href="{{ entry.url | url }}" class="nav__link {% if entry.url == page.url %}nav__link--active{% endif %}">{{ entry.title }}</a>
+        </li>
+        {%- endfor %}
+        </ul>
+    </div>
+</nav>

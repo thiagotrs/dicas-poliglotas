@@ -1,0 +1,45 @@
+{% extends "./base.njk" %}
+
+{% block header %}
+	<section
+		class="jumbotron"
+		style="background-image: url('/img/{{ bannerUrl }}');"
+	>
+		<div class="jumbotron__layer">
+			<div class="container jumbotron__wrap">
+				<h2 class="jumbotron__title">{{ title | safe }}</h2>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block content %}
+    <main class="main">
+		<div class="main__wrap">
+			<h2 class="title md:text-center">
+				{{ title | safe }}
+			</h2>
+            {% for atc in articles %}
+            <article class="article">
+                <div class="card border mb-3">
+                    <div class="card__link">
+                        <h2 class="card__title"><a href="{{ atc.url | url }}">{{ atc.data.title | safe }}</a></h2>
+                        <p class="card__date"><em>{{ atc.date | formatDate('dd/LL/yyyy') }}</em></p>
+                        {% if atc.data.bannerUrl %}<img src="/img/{{ atc.data.bannerUrl }}" class="card__image" />{% endif %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+
+            <ol class="pagination">
+                <li><a href="{{ pagination.href.previous }}" class="pagination__btn rounded-l {% if not pagination.href.previous %}pagination__btn--disabled{% endif %}">Anterior</a></li>
+            {%- for pageEntry in pagination.pages %}
+                {% if page.url == pagination.hrefs[ loop.index0 ] %}
+                <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="pagination__btn">Página {{ loop.index }}</a></li>
+                {% endif %}
+            {%- endfor %}
+                <li><a href="{{ pagination.href.next }}" class="pagination__btn rounded-r {% if not pagination.href.next %}pagination__btn--disabled{% endif %}">Próximo</a></li>
+            </ol>
+        </div>
+    </main>
+{% endblock %}

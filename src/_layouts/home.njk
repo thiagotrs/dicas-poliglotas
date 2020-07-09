@@ -1,0 +1,78 @@
+{% extends "./base.njk" %}
+
+{% block header %}
+	<div class="container call-to-action py-12 md:py-0 md:h-header-screen">
+		<div class="call-to-action__content">
+			<h2 class="title">
+				{{ callToAction.actionTitle | safe }}
+			</h2>
+			<p class="lead">
+				{{ callToAction.lead | safe }}
+			</p>
+			<a href="{{ callToAction.actionLink | url }}" class="btn inline-block">{{ callToAction.action | safe }}</a>
+		</div>
+		<img
+			src="/img/landing_1.png"
+			alt=""
+			class="call-to-action__illustration lg:right-0"
+		/>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<aside class="aside">
+		<div class="container aside__wrap md:space-x-8 md:text-center">
+			{% for card in statistics %}
+			<div class="card {% if statistics.length - 1 == loop.index0 %}hidden lg:block{% endif %}">
+				<div class="card__title m-8"><span class="card__em">{{ card.total | safe }}</span>{{ card.description | safe }}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</aside>
+	<section class="section bg-secondary">
+		<div class="container section__wrap md:text-center">
+			<h2 class="title">
+				Idiomas
+			</h2>
+			<div class="card-group">
+			{% for language in collections.language %}
+				{% if loop.index0 < 3  %}
+				<div class="card border">
+					<a href="/pages/{{ language.data.slug }}">
+						<img
+							src="/img/{{ language.data.bannerUrl }}"
+							alt="idioma"
+							class="card__image"
+						/>
+						<div class="card__title">
+							{{ language.data.title | safe }}
+						</div>
+					</a>
+				</div>
+				{% endif %}
+			{% endfor %}
+			</div>
+			<a href="/idiomas.html" class="btn inline-block">
+				Ver Mais
+			</a>
+		</div>
+	</section>
+	<section class="section lg:h-screen">
+		<div class="container call-to-action">
+			<img
+				src="img/landing_2.svg"
+				alt=""
+				class="call-to-action__illustration lg:left-0"
+			/>
+			<div class="call-to-action__content lg:ml-auto">
+				<h2 class="title">
+					{{ callToAction2.actionTitle | safe }}
+				</h2>
+				<p class="lead">
+					{{ callToAction2.lead | safe }}
+				</p>
+				<a href="{{ callToAction.actionLink | url }}" class="btn inline-block">{{ callToAction2.action | safe }}</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}
