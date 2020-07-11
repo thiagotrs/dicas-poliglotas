@@ -11,14 +11,18 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Banner", name: "bannerUrl", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Banner", name: "bannerUrl", widget: "image", required: false }
+      - { label: "Corpo", name: "body", widget: "markdown" }
   - name: "dicas"
     label: "Dicas"
     folder: "src/articles"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Data", name: "date", widget: "datetime", required: false }
+      - { label: "Banner", name: "bannerUrl", widget: "image", required: false }
+      - { label: "Corpo", name: "body", widget: "markdown" }

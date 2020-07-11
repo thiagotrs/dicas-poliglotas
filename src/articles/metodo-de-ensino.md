@@ -1,5 +1,4 @@
 ---
-tags: articles
 slug: metodo-de-ensino
 title: Método de ensino da língua estrangeira
 ---
