@@ -1,24 +1,15 @@
 {% extends "./base.njk" %}
 
 {% block header %}
-	<section
-		class="jumbotron"
-		style="background-image: url('/img/{{ bannerUrl }}');"
-	>
-		<div class="jumbotron__layer">
-			<div class="container jumbotron__wrap">
-				<h2 class="jumbotron__title">{{ title | safe }}</h2>
-			</div>
-		</div>
-	</section>
+	{% include "jumbotron.njk" %}
 {% endblock %}
 
 {% block content %}
     <main class="main">
 		<div class="main__wrap">
-			<h2 class="title md:text-center">
+			<h1 class="title md:text-center">
 				{{ title | safe }}
-			</h2>
+			</h1>
             <article class="article">
                 {{ content | safe }}
             </article>

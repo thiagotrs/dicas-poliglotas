@@ -1,6 +1,5 @@
 ---
 bannerUrl: holandes-banner.jpg
-tags: language
 slug: holandes
 title: Holandês
 ---

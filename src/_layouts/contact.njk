@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-    <section class="section md:h-header-screen">
+    <section class="section md:h-header-screen min-h-header-screen">
         <div class="container call-to-action">
             <img
                 src="img/landing_2.svg"
@@ -18,7 +18,7 @@
                 <p class="lead md:hidden xl:block">
                     {{ callToAction.lead | safe }}
                 </p>
-                <form id="contact" class="form">
+                <form id="contact" class="form" data-netlify="true">
                     <label for="subject" class="label">Assunto:</label>
                     <input type="text" id="subject" class="input" />
                     <label for="message" class="label">Mensagem:</label>
@@ -32,27 +32,4 @@
             </div>
         </div>
     </section>
-
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-    <script>
-        const form = document.querySelector("#contact");
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            const name = document.querySelector("#contact #name").value;
-            const email = document.querySelector("#contact #email").value;
-            const message = document.querySelector("#contact #message").value;
-            Email.send({
-                SecureToken: "",
-                To: "email@gmail.com",
-                From: "email@gmail.com",
-                Subject: "Dicas poliglotas - Contato",
-                Body: `
-                    Nome: ${name}</br>
-                    Email: ${email}</br>
-                    Mensagem: ${message}</br>
-                `,
-            }).then((message) => alert(message));
-        });
-    </script>
 {% endblock %}

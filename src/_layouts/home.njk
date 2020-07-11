@@ -31,22 +31,20 @@
 	</aside>
 	<section class="section bg-secondary">
 		<div class="container section__wrap md:text-center">
-			<h2 class="title">
-				Idiomas
-			</h2>
+			<h1 class="title">Idiomas</h1>
 			<div class="card-group">
-			{% for language in collections.language %}
+			{% for language in collections.languages %}
 				{% if loop.index0 < 3  %}
 				<div class="card border">
-					<a href="/pages/{{ language.data.slug }}">
+					<a href="{{ language.url | url }}">
 						<img
 							src="/img/{{ language.data.bannerUrl }}"
 							alt="idioma"
 							class="card__image"
 						/>
-						<div class="card__title">
+						<h2 class="card__title">
 							{{ language.data.title | safe }}
-						</div>
+						</h2>
 					</a>
 				</div>
 				{% endif %}
@@ -71,7 +69,7 @@
 				<p class="lead">
 					{{ callToAction2.lead | safe }}
 				</p>
-				<a href="{{ callToAction.actionLink | url }}" class="btn inline-block">{{ callToAction2.action | safe }}</a>
+				<a href="{{ callToAction2.actionLink | url }}" class="btn inline-block">{{ callToAction2.action | safe }}</a>
 			</div>
 		</div>
 	</section>

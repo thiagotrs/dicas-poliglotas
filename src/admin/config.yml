@@ -1,0 +1,26 @@
+backend:
+    name: git-gateway
+    branch: master
+
+media_folder: "images/uploads"
+
+collections:
+    - name: "idiomas" # Used in routes, e.g., /admin/collections/blog
+      label: "Idiomas" # Used in the UI
+      folder: "pages" # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: "{{slug}}" # Filename template, e.g., title.md
+      fields: # The fields for each document, usually in front matter
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - { label: "Banner", name: "bannerUrl", widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }
+    - name: "dicas"
+      label: "Dicas"
+      folder: "articles"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - { label: "Body", name: "body", widget: "markdown" }

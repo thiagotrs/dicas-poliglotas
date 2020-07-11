@@ -1,6 +1,5 @@
 ---
 bannerUrl: finlandes-banner.jpg
-tags: language
 slug: finlandes
 title: Finlandês
 ---
@@ -15,7 +14,6 @@ Abaixo os links para a lista dos materiais gratuitos para o Estudo da Língua Fi
     _Um site bem Interessante_
     ![Imagem](/img/finlandes-banner.jpg)
 -   [Speak Languages](https://pt.speaklanguages.com/finland%C3%AAs/)
-    _Um recurso muito legal_
 -   [Goethe-verlag Frases](http://www.goethe-verlag.com/book2/PX/PXFI/PXFI002.HTM)
 -   [Goethe-verlag Vocabulário](http://www.goethe-verlag.com/book2/_VOCAB/PX/PXFI/PXFI.HTM)
 -   [Caderno.org](http://caderno.org/finnish.php)

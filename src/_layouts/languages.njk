@@ -1,26 +1,17 @@
 {% extends "./base.njk" %}
 
 {% block header %}
-	<section
-		class="jumbotron"
-		style="background-image: url('/img/{{ bannerUrl }}');"
-	>
-		<div class="jumbotron__layer">
-			<div class="container jumbotron__wrap">
-				<h2 class="jumbotron__title">{{ title | safe }}</h2>
-			</div>
-		</div>
-	</section>
+	{% include "jumbotron.njk" %}
 {% endblock %}
 
 {% block content %}
 	<section class="section">
 		<div class="container section__wrap md:text-center">
-			<h2 class="title">
+			<h1 class="title">
 				{{ title | safe }}
-			</h2>
+			</h1>
 			<div class="card-group">
-			{% for language in collections.language %}
+			{% for language in collections.languages %}
 				<div class="card border">
 					<a href="{{ language.url | url }}">
 						<img
@@ -28,9 +19,9 @@
 							alt="idioma"
 							class="card__image"
 						/>
-						<div class="card__title">
+						<h2 class="card__title">
 							{{ language.data.title | safe }}
-						</div>
+						</h2>
 					</a>
 				</div>
 			{% endfor %}

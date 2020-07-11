@@ -1,0 +1,9 @@
+<ol class="pagination">
+    <li><a href="{% if pagination.href.previous %}{{ pagination.href.previous }}{% else %}#{% endif %}" class="pagination__btn rounded-l {% if not pagination.href.previous %}pagination__btn--disabled{% endif %}">Anterior</a></li>
+    {%- for pageEntry in pagination.pages %}
+    {% if page.url == pagination.hrefs[ loop.index0 ] %}
+    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="pagination__btn">Página {{ loop.index }}</a></li>
+    {% endif %}
+    {%- endfor %}
+    <li><a href="{% if pagination.href.next %}{{ pagination.href.next }}{% else %}#{% endif %}" class="pagination__btn rounded-r {% if not pagination.href.next %}pagination__btn--disabled{% endif %}">Próximo</a></li>
+</ol>

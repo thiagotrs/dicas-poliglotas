@@ -1,6 +1,8 @@
 module.exports = {
 	eleventyComputed: {
-		layout: "page.njk",
-		permalink: "dicas/{{ slug }}.html",
+		permalink: (data) =>
+			`dicas/${data.slug ? data.slug : "{{page.fileSlug}}"}.html`,
 	},
+	layout: "page.njk",
+	bannerUrl: "standard-banner.jpg",
 };

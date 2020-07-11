@@ -1,11 +1,10 @@
 ---
 layout: articles.njk
-tags: page
 title: Dicas
-bannerUrl: finlandes-banner.jpg
+bannerUrl: tips-banner.jpg
 pagination:
-    data: collections.article
-    size: 2
+    data: collections.articles
+    size: 5
     alias: articles
 eleventyNavigation:
     key: Dicas

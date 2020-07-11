@@ -5,10 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "eleventy --serve",
-		"dev": "npm-run-all --parallel bundle:*",
-		"bundle:eleventy": "eleventy --serve --quiet",
-		"bundle:postcss": "postcss src/css/styles.css -o _site/css/styles.css --watch",
-		"parcel": "parcel serve src/css/*.css --out-dir _site/css"
+		"postcss": "postcss src/css/styles.css -o _site/css/styles.css --watch"
 	},
 	"keywords": [],
 	"author": "",
@@ -16,10 +13,11 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^0.11.0",
 		"@11ty/eleventy-navigation": "^0.1.6",
+		"@fullhuman/postcss-purgecss": "^2.3.0",
 		"autoprefixer": "^9.8.4",
+		"cssnano": "^4.1.10",
+		"html-minifier": "^4.0.0",
 		"luxon": "^1.24.1",
-		"npm-run-all": "^4.1.5",
-		"parcel": "^1.12.4",
 		"postcss": "^7.0.32",
 		"postcss-cli": "^7.1.1",
 		"postcss-import": "^12.0.1",

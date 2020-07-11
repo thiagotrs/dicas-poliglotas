@@ -1,6 +1,5 @@
 ---
 bannerUrl: russo-banner.jpg
-tags: language
 slug: russo
 title: Russo
 ---

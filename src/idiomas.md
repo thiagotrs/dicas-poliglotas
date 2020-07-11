@@ -1,10 +1,9 @@
 ---
 layout: languages.njk
-permalink: "idiomas.html"
-tags: page
+permalink: idiomas.html
 title: Idiomas
-bannerUrl: finlandes-banner.jpg
+bannerUrl: languages-banner.jpg
 eleventyNavigation:
-  key: Idiomas
-  order: 2
+    key: Idiomas
+    order: 2
 ---

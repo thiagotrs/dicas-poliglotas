@@ -3,7 +3,9 @@
 	"description": "Dicas Poliglotas",
 	"lang": "pt-br",
 	"locale": "pt_br",
-	"author": "@thiagotrs",
+	"author": "Thiago Rotondo Sampaio",
+	"author_profile": "@thiagotrs",
 	"author_link": "https://github.com/thiagotrs",
-	"project_link": "https://github.com/thiagotrs"
+	"project_link": "https://github.com/thiagotrs/dicas-poliglotas",
+	"keywords": "dicas, poliglotas, aprendizagem, aprender idiomas, aprender línguas, material de estudo, estudo de idiomas, estudar línguas, estudar idiomas"
 }
