@@ -198,11 +198,11 @@ body {
 }
 
 .input {
-	@apply border block rounded-lg w-full p-2 mb-2;
+	@apply border block rounded-lg w-full p-2 mb-2 font-medium;
 }
 
 .textarea {
-	@apply border block rounded-lg w-full h-48 mb-2;
+	@apply border block rounded-lg w-full h-48 p-2 mb-2 font-medium;
 }
 
 .container {

@@ -2,7 +2,7 @@ backend:
     name: git-gateway
     branch: master
 
-media_folder: "images/uploads"
+media_folder: "img"
 
 collections:
     - name: "idiomas" # Used in routes, e.g., /admin/collections/blog

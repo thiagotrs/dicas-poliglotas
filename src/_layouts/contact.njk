@@ -18,16 +18,12 @@
                 <p class="lead md:hidden xl:block">
                     {{ callToAction.lead | safe }}
                 </p>
-                <form id="contact" class="form" data-netlify="true">
+                <form id="contact" class="form" method="POST" data-netlify="true">
                     <label for="subject" class="label">Assunto:</label>
                     <input type="text" id="subject" class="input" />
                     <label for="message" class="label">Mensagem:</label>
                     <textarea id="message" class="textarea"></textarea>
-                    <input
-                        type="submit"
-                        value="Enviar"
-                        class="btn w-full"
-                    />
+                    <button type="submit" class="btn w-full">Enviar</button>
                 </form>
             </div>
         </div>

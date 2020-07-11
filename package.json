@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "eleventy --serve",
+		"build": "ELEVENTY_ENV=production eleventy",
 		"postcss": "postcss src/css/styles.css -o _site/css/styles.css --watch"
 	},
 	"keywords": [],

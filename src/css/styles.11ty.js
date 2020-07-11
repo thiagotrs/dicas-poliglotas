@@ -33,7 +33,7 @@ module.exports = class {
 			// require('postcss-nested'),
 			require("autoprefixer"),
 			...(process.env.ELEVENTY_ENV === "production"
-				? [purgecss, cssnano]
+				? [purgecss, require("cssnano")]
 				: []),
 		])
 			.process(rawCss, { from: rawFilepath })
