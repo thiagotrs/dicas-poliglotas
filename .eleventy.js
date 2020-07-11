@@ -3,7 +3,7 @@ const { DateTime } = require("luxon");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy("admin");
+	eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
 	eleventyConfig.addPassthroughCopy({ "src/img": "img" });
 	eleventyConfig.addWatchTarget("./src/css");
 	eleventyConfig.addWatchTarget("./tailwind.config.js");
@@ -12,6 +12,10 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addFilter("formatDate", function (dateObj, fmt = "DD") {
 		return DateTime.fromJSDate(dateObj).toFormat(fmt);
+	});
+
+	eleventyConfig.addShortcode("version", function () {
+		return String(Date.now());
 	});
 
 	eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
